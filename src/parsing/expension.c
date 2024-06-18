@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expension.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfrily <tfrily@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bgolding <bgolding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:23:25 by tfrily            #+#    #+#             */
-/*   Updated: 2024/04/29 11:29:28 by tfrily           ###   ########.fr       */
+/*   Updated: 2024/06/18 13:48:30 by bgolding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*getpreffix(char *str, t_expension exp)
 	advance(str, exp);
 	x += *(exp.index);
 	while (str[x] && str[x] != '$')
-			x++;
+		x++;
 	res = ft_calloc(x + 1, sizeof(char));
 	if (res == NULL)
 		return (NULL);

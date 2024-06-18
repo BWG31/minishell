@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfrily <tfrily@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bgolding <bgolding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:24:31 by tfrily            #+#    #+#             */
-/*   Updated: 2024/04/29 11:29:17 by tfrily           ###   ########.fr       */
+/*   Updated: 2024/06/18 13:47:39 by bgolding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ t_token_list	*ft_parser(char *line)
 		if (token == NULL)
 			return (del_token_list(&list, free), NULL);
 		node = ft_lexer(token);
-		delim = ft_lexer(ft_strdup(&context.delim));
+		delim = ft_lexer(ft_strdup((char [2]){context.delim, '\0'}));
 		if (node == NULL || delim == NULL || delim->content == NULL)
 			return (del_token_list(&list, free), NULL);
 		append_token(&list, node);

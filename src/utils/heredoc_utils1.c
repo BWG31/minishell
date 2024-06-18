@@ -6,7 +6,7 @@
 /*   By: bgolding <bgolding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:26:07 by tfrily            #+#    #+#             */
-/*   Updated: 2024/06/18 13:25:59 by bgolding         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:48:49 by bgolding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*hd_getpreffix(char **str)
 	if (!*str || !str)
 		return (NULL);
 	while (str[0][x] && str[0][x] != '$')
-			x++;
+		x++;
 	res = ft_calloc(x + 1, sizeof(char));
 	if (res == NULL)
 		return (NULL);
