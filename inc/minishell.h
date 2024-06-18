@@ -6,7 +6,7 @@
 /*   By: bgolding <bgolding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:26:26 by bgolding          #+#    #+#             */
-/*   Updated: 2024/04/29 11:26:27 by bgolding         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:24:46 by bgolding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <signal.h>
+# include <sys/types.h>
+# include <sys/wait.h>
 # include <fcntl.h>
 # include <termios.h>
 # include <limits.h>

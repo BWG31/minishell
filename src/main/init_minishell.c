@@ -6,7 +6,7 @@
 /*   By: bgolding <bgolding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:26:07 by bgolding          #+#    #+#             */
-/*   Updated: 2024/04/29 11:26:08 by bgolding         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:21:42 by bgolding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	signal_handler(int signal)
 {
 	if (signal == SIGINT)
 	{
-		if (RL_ISSTATE(RL_STATE_EOF) || RL_ISSTATE(RL_STATE_DONE))
+		if (RL_ISSTATE(RL_STATE_DONE))
 			return ;
 		write(STDOUT_FILENO, "\n", 1);
 		rl_on_new_line();

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tfrily <tfrily@student.42.fr>              +#+  +:+       +#+         #
+#    By: bgolding <bgolding@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/29 11:27:07 by tfrily            #+#    #+#              #
-#    Updated: 2024/04/29 11:27:09 by tfrily           ###   ########.fr        #
+#    Updated: 2024/06/18 13:36:15 by bgolding         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,6 @@ SRC_SUBDIRS	=	main parsing execution utils builtins
 OBJ_DIR		=	obj/
 DEP_DIR		=	$(OBJ_DIR)dep/
 LIBFT_DIR	=	lib/libft/
-READLINE_DIR = $(HOME)/.brew/opt/readline/lib
-READLINE_INC_DIR = $(HOME)/.brew/opt/readline/include
 
 MAIN_SRCS	=	main init_minishell
 
@@ -63,13 +61,13 @@ endif
 all:			$(NAME)
 
 $(NAME): 		$(LIBFT) $(OBJS)
-				@$(CC) $(CFLAGS) $(OBJS) -L $(LIBFT_DIR) -lft -L$(READLINE_DIR) -lreadline -o $@
+				@$(CC) $(CFLAGS) $(OBJS) -lreadline -L$(LIBFT_DIR) -lft -o $@
 				@printf "$(GREEN)\n$(NAME) successfully compiled$(DEF_COLOR)\n"
 
 $(OBJ_DIR)%.o:	%.c
 				@mkdir -p $(OBJ_DIR)
 				@mkdir -p $(DEP_DIR)
-				@$(CC) $(CFLAGS) $(DEP_FLAGS) -I $(INC_DIR) -I$(LIBFT_DIR)/inc -I$(READLINE_INC_DIR)  -c $< -o $@
+				@$(CC) $(CFLAGS) $(DEP_FLAGS) -I $(INC_DIR) -I$(LIBFT_DIR)/inc -c $< -o $@
 				@printf "$(YELLOW).$(DEF_COLOR)"
 
 $(LIBFT):
@@ -88,31 +86,3 @@ re:				fclean all
 -include $(DEPS)
 
 .PHONY:			all clean fclean re
-
-
-# minishell/
-# 	Makefile
-#	minishell (EXECUTABLE)
-# 	/inc
-# 		*.h
-# 	/src
-#		/main
-# 			%.c
-#		/parsing
-# 			%.c
-#		/execution
-# 			%.c
-# 	/obj
-# 		/dependencies
-# 			%.d
-# 		%.o
-# 	/lib
-# 		libft/
-# 			Makefile
-#			libft.a
-# 			inc/
-# 				libft.h
-# 			src/
-# 				%.c
-# 			obj/
-# 				%.o

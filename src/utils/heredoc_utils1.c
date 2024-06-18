@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc_utils1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfrily <tfrily@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bgolding <bgolding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:26:07 by tfrily            #+#    #+#             */
-/*   Updated: 2024/04/29 11:26:07 by tfrily           ###   ########.fr       */
+/*   Updated: 2024/06/18 13:25:59 by bgolding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,7 @@ char	*hd_getvarname(char **str)
 char	*hd_getsuffix(char **str)
 {
 	char	*res;
-	int		x;
 
-	x = 0;
 	if (!*str || !str)
 		return (NULL);
 	res = ft_calloc(ft_strlen(*str) + 1, sizeof(char));
